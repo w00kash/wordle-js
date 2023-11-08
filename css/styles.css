@@ -1,0 +1,173 @@
+* {
+  color: #ffffff;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+html,
+body {
+  background: var(--default);
+}
+
+:root {
+  --default: #121213;
+  --colour-tone-1: #d3d6da;
+  --key-colour: #818384;
+  --grey-overlay:#3a3a3c;
+  --yellow-overlay:#b59f3a;
+  --green-overlay:#538d4e;
+}
+
+.game-container {
+  height: 90vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title-container {
+  text-align: center;
+  width: 510px;
+  border-bottom: 1px solid var(--grey-overlay);
+}
+
+.keyboard-container {
+  width: 510px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.keyboard-container button {
+  width: 43px;
+  height: 58px;
+  border-radius: 4px;
+  border: none;
+  background-color: var(--key-colour);
+  margin: 4px;
+  font-size: 1rem;
+}
+
+.keyboard-container button:nth-child(20),
+.keyboard-container button:nth-child(28) {
+  width: 66px;
+}
+
+.keyboard-container button:nth-child(11) {
+  margin-left: 30px;
+}
+
+.message-container {
+  height: 30px;
+  width: 300px;
+}
+
+.message-container p {
+  background-color: var(--key-colour);
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid var(--colour-tone-1);
+  margin: 0;
+  text-align: center;
+}
+
+.tile-container {
+  width: 330px;
+  margin-bottom: 30px;
+}
+
+.tile-container div {
+  display: flex;
+}
+
+.tile-container .tile {
+  width: 62px;
+  height: 62px;
+  border: 2px solid var(--grey-overlay);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2px;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.tile.flip {
+  animation: 0.5s linear flipping;
+}
+
+@keyframes flipping {
+  0% {
+    transform: rotateX(0deg);
+    ;
+  }
+
+  50% {
+    transform: rotateX(90deg);
+  }
+
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+.tile.zoom {
+  animation: 0.1s linear zooming;
+}
+
+@keyframes zooming {
+  0% {
+    transform: scale(100%);
+    border: 2px;
+  }
+  50% {
+    transform: scale(120%);
+    border: 4px;
+  }
+
+  100% {
+    transform: scale(100%);
+    border: 2px;
+  }
+}
+
+.tile.bounce {
+  animation: 0.4s ease-out bouncing;
+}
+
+@keyframes bouncing {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  25% {
+    transform: translate(0px, -20px);
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: translate(0px, 0px);
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: translate(0px, -10px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+.grey-overlay {
+  background-color: var(--grey-overlay) !important;
+  border: none !important;
+}
+
+.yellow-overlay {
+  background-color: var(--yellow-overlay) !important;
+  border: none !important;
+}
+
+.green-overlay {
+  background-color: var(--green-overlay) !important;
+  border: none !important;
+}
